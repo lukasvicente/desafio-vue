@@ -4,7 +4,7 @@
         <v-card>
             <v-typography>Team Sing up</v-typography>
             <v-form-tabs-sing-up />
-            <v-button >Next</v-button>
+            <v-button @click="onNext" >Next</v-button>
         </v-card>
     </v-conteiner>
    </div>
@@ -26,6 +26,11 @@ export default {
         'v-conteiner' : Conteiner,
         'v-card' : Card
     },
+    methods:{
+        onNext(){
+            alert('next')
+        }
+    }
 
 }
 </script>
