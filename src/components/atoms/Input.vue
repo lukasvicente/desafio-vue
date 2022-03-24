@@ -4,7 +4,10 @@
     :type="type" 
     :name="name" 
     :id="id"
-    :placeholder="placeholder">
+    :placeholder="placeholder"
+    :value="value"
+    @input="onInput"
+    >
 </template>
 
 <script>
@@ -26,9 +29,17 @@ export default {
         placeholder:{
             type: String,
             default: ''
+        },
+        value:{
+            type: String,
+            
+        }
+    },
+    methods:{
+        onInput(event){
+            this.$emit('input', event.target.value)
         }
     }
-
 }
 </script>
 

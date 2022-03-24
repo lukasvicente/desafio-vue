@@ -7,8 +7,8 @@
           :class="{ active: tab.isActive }"
           :href="tab.href"
           @click.prevent="selectTab(tab)"
-          >{{ tab.name }}</a
-        >
+          >{{ tab.name }}
+        </a>
       </li>
     </ul>
     <div class="tabs-details">
@@ -21,7 +21,9 @@
 export default {
   name: "tabsItem",
   data() {
-    return { tabs: [] };
+    return {
+      tabs: [],
+    };
   },
   created() {
     this.tabs = this.$children;
@@ -29,7 +31,7 @@ export default {
   methods: {
     selectTab(selectedTab) {
       this.tabs.forEach((tab) => {
-        tab.isActive = tab.name == selectedTab.name;
+        tab.isActive = tab.name === selectedTab.name;
       });
     },
   },

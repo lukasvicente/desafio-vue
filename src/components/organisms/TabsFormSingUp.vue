@@ -2,9 +2,9 @@
   <div>
     <v-tabs>
       <v-tab name="Personal" :selected="true">
-        <v-input placeholder="Full Name" />
-        <v-input placeholder="Nickname" />
-        <v-input placeholder="Email" type="email" />
+        <v-input placeholder="Full Name"  v-model="name" />
+        <v-input placeholder="Nickname" v-model="nickName" />
+        <v-input placeholder="Email" type="email" v-model="email" />
         <div class="row">
           <div class="col">
             <v-input placeholder="Day" />
@@ -49,6 +49,35 @@ export default {
     "v-tabs": Tabs,
     "v-tab": Tab,
   },
+  computed:{
+    name:{
+      get(){
+        return this.$store.state.singUp.name;
+      },
+      set(value){
+        const data = { atribute: 'name', value}
+        this.$store.commit('setSingUp', data)
+      }
+    },
+    nickName:{
+      get(){
+        return this.$store.state.singUp.nickname;
+      },
+      set(value){
+        const data = { atribute: 'nickname', value}
+        this.$store.commit('setSingUp', data)
+      }
+    },
+    email:{
+      get(){
+        return this.$store.state.singUp.email;
+      },
+      set(value){
+        const data = { atribute: 'email', value}
+        this.$store.commit('setSingUp', data)
+      }
+    },
+  }
 };
 </script>
 

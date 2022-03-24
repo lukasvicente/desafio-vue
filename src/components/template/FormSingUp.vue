@@ -4,7 +4,7 @@
         <v-card>
             <v-typography>Team Sing up</v-typography>
             <v-form-tabs-sing-up />
-            <v-button @click="onNext" >Next</v-button>
+            <v-button disabled @click="onNext" >Next</v-button>
         </v-card>
     </v-conteiner>
    </div>
@@ -25,6 +25,11 @@ export default {
         'v-typography':Typography,
         'v-conteiner' : Conteiner,
         'v-card' : Card
+    },
+    computed:{
+        name(){
+            return this.$store.state.singUp.name;
+        }
     },
     methods:{
         onNext(){
