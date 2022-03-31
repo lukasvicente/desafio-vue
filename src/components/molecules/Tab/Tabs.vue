@@ -20,19 +20,28 @@
 <script>
 export default {
   name: "tabsItem",
+  props:{
+    route:{
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       tabs: [],
     };
   },
   created() {
-    this.tabs = this.$children;
+    this.tabs = this.$children; 
+ 
   },
   methods: {
-    selectTab(selectedTab) {
-      this.tabs.forEach((tab) => {
-        tab.isActive = tab.name === selectedTab.name;
-      });
+    selectTab(selectedTab) { 
+      if(!this.route){
+        this.tabs.forEach((tab) => {
+          tab.isActive = tab.name === selectedTab.name;
+        });
+      }
     },
   },
 };

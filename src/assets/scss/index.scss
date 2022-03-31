@@ -25,6 +25,9 @@ body{
 .mt-20{
     margin-top: 20px;
 }
+.ml-20{
+    margin-left: 20px;
+}
 .row{
  
     display: flex;
@@ -32,6 +35,13 @@ body{
  
 }
 .col{
-    flex: 1 0 0%;
-     
+    flex: 1 0 0%; 
  }
+  
+ .input {
+    width: 100%;
+    background: #ffffff;
+    border: 0.8px solid #dddddd;
+    border-radius: 4px;
+    padding: 16.5px 14px;
+  }

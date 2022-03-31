@@ -1,10 +1,14 @@
 <template>
-  <h1>Profile</h1>
+  <v-content-profile />
 </template>
 
 <script>
+import ContentProfile from '@/components/template/ContentProfile.vue'
 export default {
-    name:'profileItem'
+    name:'profileItem',
+    components:{
+      'v-content-profile':ContentProfile
+    }
 }
 </script>
 

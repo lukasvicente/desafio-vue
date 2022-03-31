@@ -7,21 +7,33 @@ export default new Vuex.Store({
     state:{
         singUp:{
             name:'',
-            nickname:'',
+            nickName:'',
             email:'',
             phone:'',
-            day:'',
-            month:'',
-            year:'',
+            day:0,
+            month:0,
+            year:0,
+            age:'',
             linkedin:'',
             github:'',
-            certificate:[],
-        }
+            certificate:[{
+                instituicion: null,
+                graduation: null,
+                name: null,
+            }],
+            errorInput:{}
+        },
+        auhtenticate: false,
+        
     },
     mutations:{
         setSingUp(state, payload){
             const { atribute, value } = payload;
             state.singUp[atribute] = value;
+        },
+        addError(state, payload){            
+
+            state.singUp.errorInput = payload;
         },
     }
 });
