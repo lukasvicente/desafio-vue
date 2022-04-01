@@ -11,18 +11,15 @@
         :name="certificate[index]['graduation']"
         v-model="certificate[index].graduation"
       />
-      <v-input
-        placeholder="Certificates"
-        :name="certificate[index]['name']"
-        v-model="certificate[index].name"
-      />
+       
+        <v-input
+          placeholder="Certificates"
+          :name="certificate[index]['name']"
+          v-model="certificate[index].name"
+        />
+       
     </div>
-
-    <hr />
-    <br />
-    {{ certificate }}
-    <hr />
-    <button @click="addInput">ADD</button>
+    <div class="btnIcon" @click="addInput"><i class="fa-solid fa-plus"></i></div>
   </div>
 </template>
 
@@ -51,5 +48,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+ .btnIcon{
+    position: relative;
+    display: flex;
+    float: right;
+    margin-top: -38px;
+    margin-right: 20px;
+   cursor: pointer;
+   color: #c5c4c4;
+ }
+  
 </style>
