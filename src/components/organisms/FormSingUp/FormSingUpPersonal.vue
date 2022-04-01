@@ -51,7 +51,7 @@
       </div>
     </div>
     
-    <v-check-box>I accept the terms and privacy</v-check-box>
+    <v-check-box   v-model="acceptTerms" >I accept the terms and privacy</v-check-box> 
   </div>
 </template>
 
@@ -68,7 +68,7 @@ export default {
   },
   data(){
     return {
-       
+      check: false,
       options:[
         {text: 'Day', value: ''},
         {text: '1', value: '1'},
@@ -190,6 +190,16 @@ export default {
       },
       set(value) {
         const data = { atribute: "year", value };
+        this.$store.commit("setSingUp", data);
+      },
+    },
+
+    acceptTerms: {
+      get() {
+        return this.$store.state.singUp.acceptTerms;
+      },
+      set(value) {
+        const data = { atribute: "acceptTerms", value };
         this.$store.commit("setSingUp", data);
       },
     },

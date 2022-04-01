@@ -4,7 +4,7 @@
         <v-card>
             <v-typography>Team Sing up</v-typography>
             <v-form-tabs-sing-up />
-            <v-button @click="onNext" >{{nameButton}}</v-button>
+            <v-button :disabled="disabled" @click="onNext" >{{nameButton}}</v-button> 
         </v-card>
     </v-conteiner>
    </div>
@@ -23,7 +23,7 @@ export default {
         return {
             nameRouteComponente: '',
             error: [],
-            nameButton: 'Next'
+            nameButton: 'Next',
         }
     },
     components: {
@@ -54,6 +54,9 @@ export default {
         age(){
             return this.$store.state.singUp.age;
         },
+        acceptTerms(){
+            return this.$store.state.singUp.acceptTerms;
+        },
         github(){
             return this.$store.state.singUp.github;
         },
@@ -61,12 +64,14 @@ export default {
             return this.$store.state.singUp.linkedin;
         },
         
+        disabled(){
+            return this.acceptTerms ? false : true;
+        },
     },
     methods:{
         nameButtonRoute(value){
             this.nameButton = value === 'certificates' ? 'Finish' : 'Next';
         },
-        
         isValidateRequired(value){
             const message = required(this[value]);
             const data = {

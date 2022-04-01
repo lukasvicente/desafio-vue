@@ -14,6 +14,7 @@ export default new Vuex.Store({
             month:0,
             year:0,
             age:'',
+            acceptTerms: false,
             linkedin:'',
             github:'',
             certificate:[{

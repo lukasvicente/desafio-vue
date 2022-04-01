@@ -28,7 +28,7 @@
 
         <h3 class="title-profile mt-5">Certificates</h3>
         <hr class="divider" />
-        <ul class="list-item ml-20 mt-5 timeline">
+        <ul class="list-item ml-20 mt-5 timeline" v-if="showCertificate">   
           <li v-for="item in certificate" class="bullet" :key="item">
  
               <p>{{ item.graduation }}</p>
@@ -36,6 +36,7 @@
             
           </li>
         </ul>
+        <p v-else> Sem dados de certificado!</p>
       </v-card>
     </v-conteiner>
   </div>
@@ -53,6 +54,10 @@ export default {
     "v-typography": Typography,
   },
   computed: {
+    showCertificate(){
+      const show = this.certificate[0].instituicion;
+      return show ? true : false;
+    },
     name() {
       return this.$store.state.singUp.name;
     },

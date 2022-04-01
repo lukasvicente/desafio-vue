@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input
+    <input   
       class="input mt-5 mb-5"
       :class="[{ error: error }]"
       :type="type"

@@ -29,6 +29,6 @@ export default {
     cursor: not-allowed;
     background-color: rgba(239, 239, 239, 0.925) ;
     color: rgba(16, 16, 16, 0.3);
-    border-color: rgba(118, 118, 118, 0.3);
+    border-color: #ffffff4d;
 }
 </style>
