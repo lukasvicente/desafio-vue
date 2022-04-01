@@ -59,6 +59,7 @@
 import Input from "@/components/atoms/Input.vue";
 import CheckBox from "@/components/atoms/CheckBox.vue";
 import Select from "@/components/atoms/Select.vue";
+import { formatMonth } from '@/utils/format';
 export default {
   name: "formSingUpProfile",
   components: {
@@ -95,7 +96,7 @@ export default {
       const data = [{text: 'Month', value: ''}] 
       for (let month = 1; month <= 12; month++ ){
         const valueData = {
-          text: month,
+          text: formatMonth(month),
           value: month
         }
         data.push(valueData)

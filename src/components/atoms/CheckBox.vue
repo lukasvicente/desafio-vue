@@ -3,8 +3,6 @@
     <input
       class="input"
       type="checkbox"
-      style="background-color='red'}"
-       
       @input="onInput"
       :name="name"
       :id="name"
@@ -23,7 +21,7 @@ export default {
 
     },
     value: {
-      type: String,
+      type: String, 
     },
   },
   methods: {
@@ -34,7 +32,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '@/assets/scss/index.scss';
+
 .form-check {
   position: relative;
   display: block;
@@ -44,7 +44,6 @@ export default {
   height: 15px;
   cursor: pointer;
 }
-
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
